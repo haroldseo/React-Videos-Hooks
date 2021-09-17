@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import CommentBox from "../CommentBox/CommentBox";
+import CommentList from "../CommentBox/CommentList";
 
 const VideoDetail = ({ video }) => {
+  const [comments, setComments] = useState([]);
+
   if (!video) {
     return <div>Loading...</div>;
   }
@@ -15,6 +19,10 @@ const VideoDetail = ({ video }) => {
       <div className='ui segment'>
         <h4 className='ui header'>{video.snippet.title}</h4>
         <p>{video.snippet.description}</p>
+      </div>
+      <div className='ui segment'>
+        <CommentBox setComments={setComments} />
+        <CommentList comments={comments} />
       </div>
     </div>
   );
