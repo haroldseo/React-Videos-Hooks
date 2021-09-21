@@ -1,7 +1,7 @@
 import React from "react";
 import CommentItem from "./CommentItem";
 
-const CommentList = ({ comments, commentKey }) => {
+const CommentList = ({ comments }) => {
   const renderedCommentList = comments.map((comment, index) => {
     return <CommentItem key={index} comment={comment} />;
   });
