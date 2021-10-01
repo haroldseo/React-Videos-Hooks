@@ -9,6 +9,10 @@ const VideoDetail = ({ video }) => {
     return <div>Loading...</div>;
   }
 
+  const addComment = (comment) => {
+    setComments([...comments, comment]);
+  };
+
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
@@ -21,7 +25,7 @@ const VideoDetail = ({ video }) => {
         <p>{video.snippet.description}</p>
       </div>
       <div className='ui segment'>
-        <CommentBox setComments={setComments} />
+        <CommentBox addComment={addComment} />
         <CommentList comments={comments} />
       </div>
     </div>

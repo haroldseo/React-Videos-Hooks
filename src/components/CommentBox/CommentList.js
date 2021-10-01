@@ -3,10 +3,19 @@ import CommentItem from "./CommentItem";
 
 const CommentList = ({ comments }) => {
   const renderedCommentList = comments.map((comment, index) => {
-    return <CommentItem key={index} comment={comment} />;
+    return (
+      <div className='ui comments' key={index}>
+        <CommentItem comment={comment.comment} author={comment.author} />
+      </div>
+    );
   });
 
-  return <div className='ui relaxed divided list'>{renderedCommentList}</div>;
+  return (
+    <div className='ui relaxed divided list'>
+      <h3 className='ui dividing header'>Comments</h3>
+      {renderedCommentList}
+    </div>
+  );
 };
 
 export default CommentList;
