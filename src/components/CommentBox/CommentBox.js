@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./CommentBox.css";
+
 const CommentBox = ({ addComment }) => {
   const [commentValue, setCommentValue] = useState({ author: "", comment: "" });
   const author = commentValue.author;
@@ -46,12 +48,12 @@ const CommentBox = ({ addComment }) => {
   return (
     <form onSubmit={handleCommentSubmit} className='ui form'>
       <div className='field'>
-        <input type='text' placeholder='Name' value={author} name='author' onChange={handleUserInput} />
-        {commentErr.author}
+        <input type='text' placeholder='Name' value={author} name='author' onChange={handleUserInput} className={`${commentErr.author ? "inputError" : ""}`} />
+        <div className='error'>{commentErr.author}</div>
       </div>
       <div className='field'>
-        <textarea rows='3' type='text' placeholder='Add Comment' value={comment} name='comment' onChange={handleUserInput} />
-        {commentErr.comment}
+        <textarea rows='3' type='text' placeholder='Add Comment' value={comment} name='comment' onChange={handleUserInput} className={`${commentErr.comment ? "inputError" : ""}`} />
+        <div className='error'>{commentErr.comment}</div>
       </div>
       <button className='ui button' type='submit'>
         Post
