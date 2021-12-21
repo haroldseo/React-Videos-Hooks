@@ -13,6 +13,8 @@ const App = () => {
     setSelectedVideo(videos[0]);
   }, [videos]);
 
+  // JavaScript to TypeScript
+
   return (
     <div className='ui container'>
       <SearchBar onSearchSubmit={search} />
