@@ -13,11 +13,6 @@ const App = () => {
     setSelectedVideo(videos[0]);
   }, [videos]);
 
-  // JavaScript to TypeScript
-
-  //npm install typescript
-  //Change files to tsx
-
   return (
     <div className='ui container'>
       <SearchBar onSearchSubmit={search} />
