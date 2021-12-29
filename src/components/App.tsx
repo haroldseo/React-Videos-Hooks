@@ -6,7 +6,7 @@ import VideoDetail from "./VideoDetail/VideoDetail";
 import useVideos from "../hooks/useVideos";
 
 const App = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState<unknown>(null); //unknown value
   const [videos, search] = useVideos("nba");
 
   useEffect(() => {
