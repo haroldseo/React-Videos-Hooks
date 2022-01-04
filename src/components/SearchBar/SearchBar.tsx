@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearchSubmit }) => {
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState<string>("");
 
-  const onInputChange = (event) => {
+  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTerm(event.target.value);
   };
 
