@@ -7,7 +7,7 @@ const SearchBar = ({ onSearchSubmit }) => {
     setTerm(event.target.value);
   };
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
 
     onSearchSubmit(term);
