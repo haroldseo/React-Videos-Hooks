@@ -6,7 +6,7 @@ import VideoDetail from "./VideoDetail/VideoDetail";
 import useVideos from "../hooks/useVideos";
 
 const App = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState<object | null>(null);
   const [videos, search] = useVideos("nba");
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const App = () => {
             <VideoDetail video={selectedVideo} />
           </div>
           <div className='five wide column'>
-            <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
+            <VideoList onVideoSelect={(video: object) => setSelectedVideo(video)} videos={videos} />
           </div>
         </div>
       </div>
