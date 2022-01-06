@@ -22,9 +22,7 @@ const App = () => {
             <VideoDetail video={selectedVideo} />
           </div>
           <div className='five wide column'>
-            {/* Whenever we have an argument and it gets passed directly to a function*/}
-            {/* (video) => setSelectedVideo(video) this can be condensed to just setSelectedVideo*/}
-            <VideoList onVideoSelect={(video) => setSelectedVideo(video)} videos={videos} />
+            <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
           </div>
         </div>
       </div>
