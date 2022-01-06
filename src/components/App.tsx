@@ -10,7 +10,7 @@ const App = () => {
   const [videos, search] = useVideos("nba");
 
   useEffect(() => {
-    setSelectedVideo(videos[0]);
+    setSelectedVideo(videos);
   }, [videos]);
 
   return (
