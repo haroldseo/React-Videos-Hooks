@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 
-const SearchBar = ({ onSearchSubmit }) => {
+type TonSearchSubmit = { onSearchSubmit: (term: string) => Promise<void> };
+
+const SearchBar = ({ onSearchSubmit }: TonSearchSubmit) => {
   const [term, setTerm] = useState("");
 
-  const onInputChange = (event) => {
+  const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTerm(event.target.value);
   };
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     onSearchSubmit(term);
