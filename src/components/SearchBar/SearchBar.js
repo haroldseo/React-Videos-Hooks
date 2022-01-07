@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const SearchBar = ({ onSearchSubmit }) => {
-  const [term, setTerm] = useState<string>("");
+  const [term, setTerm] = useState("");
 
-  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onInputChange = (event) => {
     setTerm(event.target.value);
   };
 
-  const onFormSubmit = (event: React.SyntheticEvent) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
 
     onSearchSubmit(term);

@@ -18,7 +18,7 @@ const useVideos = (defaultSearchTerm: string) => {
     setVideos(response.data.items);
   };
 
-  return [videos, search];
+  return { videos, search };
 };
 
 export default useVideos;
